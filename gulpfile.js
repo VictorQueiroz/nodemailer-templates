@@ -11,31 +11,32 @@ var uglify = require('gulp-uglify');
 var paths = require('./settings').paths;
 var compatibility = require('./settings').compatibility;
 
-var pkg = JSON.parse(fs.readFileSync('./package.json').toString());
-
 // Recursive delete method to remove all files and folder from non-empty directories.
 var cleanDir = function (argPath) {
-	var fileList = fs.readdirSync(argPath);
-	var filePath;
-	for (var i = 0, n = fileList.length; i < n; ++i) {
-		// Set the path of each file.
-		filePath = path.join(argPath, '/');
-		filePath = path.join(filePath, fileList[i]);
-		if (fs.statSync(filePath).isDirectory()) {
-			// Recursive call.
-			cleanDir(filePath);
-			fs.rmdirSync(filePath);
+	if (fs.existsSync(argPath)) {
+		var fileList = fs.readdirSync(argPath);
+		var filePath;
+		for (var i = 0, n = fileList.length; i < n; ++i) {
+			// Set the path of each file.
+			filePath = path.join(argPath, '/');
+			filePath = path.join(filePath, fileList[i]);
+			if (fs.statSync(filePath).isDirectory()) {
+				// Recursive call.
+				cleanDir(filePath);
+				fs.rmdirSync(filePath);
+			}
+			else
+				fs.unlinkSync(filePath);
 		}
-		else
-			fs.unlinkSync(filePath);
+		return true;
 	}
 };
 
 gulp.task('test', function () {
-	// If the package is client compatible clear the old coverage .json files because karma-coverage creates a new one each time.
-	if (compatibility.client) {
-		cleanDir(paths.coverage);
-	}
+	if (cleanDir(paths.coverage))
+		fs.rmdir(paths.coverage);
+	if (cleanDir(paths.results))
+		fs.rmdir(paths.results);
 
 	// Use karma to run tests and output results + coverage in html format if the module is client compatible.
 	return gulp.src(paths.specs)
@@ -55,13 +56,15 @@ gulp.task('jsdoc', function () {
 });
 
 gulp.task('uglify', function () {
-	cleanDir(paths.bin);
+	if (cleanDir(paths.bin))
+		fs.rmdir(paths.bin);
 
-	return gulp.src(paths.scripts)
-		.pipe(uglify({
-			outSourceMap: false
-		}))
-		.pipe(gulp.dest(paths.bin));
+	if (compatibility.server)
+		return gulp.src(paths.scripts)
+			.pipe(uglify({
+				outSourceMap: false
+			}))
+			.pipe(gulp.dest(paths.bin));
 });
 
 gulp.task('default', function () {
