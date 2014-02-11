@@ -32,11 +32,14 @@ var cleanDir = function (argPath) {
 	}
 };
 
+var deleteDir = function (argPath) {
+	if (fs.existsSync(argPath))
+		cleanDir(argPath);
+};
+
 gulp.task('test', function () {
-	if (cleanDir(paths.coverage))
-		fs.rmdir(paths.coverage);
-	if (cleanDir(paths.results))
-		fs.rmdir(paths.results);
+	deleteDir(paths.coverage);
+	deleteDir(paths.results);
 
 	// Use karma to run tests and output results + coverage in html format if the module is client compatible.
 	return gulp.src(paths.specs)
@@ -56,8 +59,7 @@ gulp.task('jsdoc', function () {
 });
 
 gulp.task('uglify', function () {
-	if (cleanDir(paths.bin))
-		fs.rmdir(paths.bin);
+	deleteDir(paths.bin);
 
 	if (compatibility.server)
 		return gulp.src(paths.scripts)
@@ -67,10 +69,6 @@ gulp.task('uglify', function () {
 			.pipe(gulp.dest(paths.bin));
 });
 
-gulp.task('default', function () {
-	gulp.run('test');
-	gulp.run('jsdoc');
-	gulp.run('uglify');
-});
+gulp.task('default', ['test', 'jsdoc', 'uglify']);
 
 module.exports = gulp;
