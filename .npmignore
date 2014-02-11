@@ -1,0 +1,17 @@
+####################
+## WebStorm
+####################
+.idea/
+
+####################
+## Project
+####################
+node_modules/
+bower_modules/
+.log
+.npmignore
+test/
+.gitignore
+gulpfile.js
+karma.conf.js
+settings.js

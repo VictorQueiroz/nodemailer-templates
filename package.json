@@ -5,7 +5,7 @@
   "description": "Template for creating a package in JavaScript.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JohnPittman/models-js.git"
+    "url": "https://github.com/JohnPittman/package-seed-js.git"
   },
   "keywords": [
     "package-seed-js"
@@ -29,17 +29,9 @@
     "gulp-mocha": "*"
   },
   "license": "MIT",
-  "readmeFilename": "./README",
-  "bugs": {
-    "url": "https://github.com/JohnPittman/package-seed-js'/issues"
-  },
-  "main": "./bin/module.js",
-  "bin": "./bin/module.js",
-  "directories": {
-    "doc": "./docs",
-    "bin": "./bin",
-    "lib": "lib"
-  },
+  "readmeFilename": "./README.md",
+  "main": "./lib/index",
+  "bin": "./bin/index",
   "scripts": {
     "preinstall": "npm install -g gulp"
   },
