@@ -1,0 +1,49 @@
+{
+  "name": "package-seed-js",
+  "version": "1.0.1",
+  "author": "John Pittman <johnrichardpittman@gmail.com>",
+  "description": "Template for creating a package in JavaScript.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JohnPittman/models-js.git"
+  },
+  "keywords": [
+    "package-seed-js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "jsdoc": "*",
+    "mocha": "*",
+    "chai": "*",
+    "uglify-js": "*",
+    "karma": "*",
+    "karma-mocha": "*",
+    "karma-coverage": "*",
+    "karma-html-reporter": "*",
+    "karma-browserify": "*",
+    "karma-commonjs": "*",
+    "gulp": "*",
+    "gulp-jsdoc": "*",
+    "gulp-uglify": "*",
+    "gulp-karma": "*",
+    "gulp-mocha": "*"
+  },
+  "license": "MIT",
+  "readmeFilename": "./README",
+  "bugs": {
+    "url": "https://github.com/JohnPittman/package-seed-js'/issues"
+  },
+  "main": "./bin/module.js",
+  "bin": "./bin/module.js",
+  "directories": {
+    "doc": "./docs",
+    "bin": "./bin",
+    "lib": "lib"
+  },
+  "scripts": {
+    "preinstall": "npm install -g gulp"
+  },
+  "engines": {
+    "node": "*"
+  }
+}
