@@ -30,8 +30,8 @@
   },
   "license": "MIT",
   "readmeFilename": "./README.md",
-  "main": "./lib/index",
-  "bin": "./bin/index",
+  "main": "./lib/index.js",
+  "bin": "./bin/index.js",
   "scripts": {
     "preinstall": "npm install -g gulp"
   },
