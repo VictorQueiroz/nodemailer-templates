@@ -1,6 +1,6 @@
 {
   "name": "package-seed-js",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "author": "John Pittman <johnrichardpittman@gmail.com>",
   "description": "Template for creating a package in JavaScript.",
   "repository": {
