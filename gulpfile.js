@@ -12,7 +12,7 @@ var paths = require('./settings').paths;
 var compatibility = require('./settings').compatibility;
 
 // Recursive delete method to remove all files and folder from non-empty directories.
-var cleanDir = function (argPath) {
+var deleteDir = function (argPath) {
 	if (fs.existsSync(argPath)) {
 		var fileList = fs.readdirSync(argPath);
 		var filePath;
@@ -22,19 +22,13 @@ var cleanDir = function (argPath) {
 			filePath = path.join(filePath, fileList[i]);
 			if (fs.statSync(filePath).isDirectory()) {
 				// Recursive call.
-				cleanDir(filePath);
+				deleteDir(filePath);
 				fs.rmdirSync(filePath);
 			}
 			else
 				fs.unlinkSync(filePath);
 		}
-		return true;
 	}
-};
-
-var deleteDir = function (argPath) {
-	if (fs.existsSync(argPath))
-		cleanDir(argPath);
 };
 
 gulp.task('test', function () {
@@ -52,7 +46,7 @@ gulp.task('test', function () {
 });
 
 gulp.task('jsdoc', function () {
-	cleanDir(paths.docs);
+	deleteDir(paths.docs);
 
 	return gulp.src([paths.scripts, 'README.md'])
 		.pipe(jsdoc(paths.docs));
