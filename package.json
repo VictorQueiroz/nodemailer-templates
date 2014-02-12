@@ -1,14 +1,14 @@
 {
-  "name": "package-seed-js",
+  "name": "npm-package-seed",
   "version": "1.0.0",
   "author": "John Pittman <johnrichardpittman@gmail.com>",
-  "description": "Template for creating a package in JavaScript.",
+  "description": "Template for creating a npm package in JavaScript.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JohnPittman/package-seed-js.git"
+    "url": "https://github.com/JohnPittman/npm-package-seed.git"
   },
   "keywords": [
-    "package-seed-js"
+    "npm-package-seed"
   ],
   "dependencies": {},
   "devDependencies": {
