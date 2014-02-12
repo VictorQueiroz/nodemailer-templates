@@ -1,5 +1,5 @@
-package-seed-js
-===============
+npm-package-seed
+================
 
 Template for creating a package in JavaScript.
 
@@ -7,8 +7,8 @@ Project Installation
 ====================
 
 Prequisites:
-- nodejs
-- Java
+- npm
+- Java for JSDoc
 
 Open a terminal in the root of this project.
 Run "npm install".
