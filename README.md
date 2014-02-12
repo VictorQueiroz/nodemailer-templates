@@ -1,7 +1,7 @@
 npm-package-seed
 ================
 
-Template for creating a package in JavaScript.
+Template for creating a package for node package manager.
 
 Project Installation
 ====================
