@@ -1,31 +1,27 @@
 {
-  "name": "npm-package-seed",
+  "name": "nodemailer-mustache",
   "version": "1.0.0",
   "author": "John Pittman <johnrichardpittman@gmail.com>",
-  "description": "Template for creating a npm package in JavaScript.",
+  "description": "Mustache plugin object to render {{}} templated emails for nodemailer.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JohnPittman/npm-package-seed.git"
+    "url": "https://github.com/JohnPittman/nodemailer-mustache.git"
   },
   "keywords": [
-    "npm-package-seed"
+    "nodemailer-mustache",
+    "template"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "mustache": "*"
+  },
   "devDependencies": {
     "jsdoc": "*",
     "mocha": "*",
     "chai": "*",
     "uglify-js": "*",
-    "karma": "*",
-    "karma-mocha": "*",
-    "karma-coverage": "*",
-    "karma-html-reporter": "*",
-    "karma-browserify": "*",
-    "karma-commonjs": "*",
     "gulp": "*",
     "gulp-jsdoc": "*",
     "gulp-uglify": "*",
-    "gulp-karma": "*",
     "gulp-mocha": "*"
   },
   "license": "MIT",

@@ -4,6 +4,12 @@
 .idea/
 
 ####################
+## Sublime Text
+####################
+*.sublime-project
+*.sublime-workspace
+
+####################
 ## Project
 ####################
 node_modules/

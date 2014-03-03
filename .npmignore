@@ -4,6 +4,12 @@
 .idea/
 
 ####################
+## Sublime Text
+####################
+*.sublime-project
+*.sublime-workspace
+
+####################
 ## Project
 ####################
 node_modules/
@@ -13,5 +19,4 @@ bower_modules/
 test/
 .gitignore
 gulpfile.js
-karma.conf.js
 settings.js

@@ -1,0 +1,1 @@
+function MustacheMail(e,r){return"object"==typeof r?this._render(e,r):e}var Mustache=require("mustache");MustacheMail.prototype._render=function(e,r){for(var t in e){var a=e[t];"string"==typeof a&&(e[t]=Mustache.render(a,r))}return e},module.exports=MustacheMail;

@@ -1,14 +1,26 @@
 var expect = require('chai').expect;
 
-var Module = require('../../../lib/index');
+var MustacheMail = require('../../../lib/index');
 
-describe('Module', function () {
-	beforeEach(function () {
-	});
+describe('MustacheMail', function() {
+  var myEmail = "johnrichardpittman@gmail.com";
+  var mustacheMail;
+  var mailOptions;
+  var mailModel = {
+    email: myEmail
+  }
 
-	describe('#Method', function () {
-		it('', function () {
-			expect().to.equal();
-		});
-	});
+  beforeEach(function() {
+    mailOptions = {
+      from: "{{email}}"
+    };
+
+    mustacheMail = new MustacheMail(mailOptions, mailModel);
+  });
+
+  describe('#_render', function() {
+    it('Replace all mustache tags with data from mailModel.', function() {
+      expect(mustacheMail.from).to.equal(myEmail);
+    });
+  });
 });
