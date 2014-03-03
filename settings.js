@@ -3,6 +3,6 @@ module.exports = {
     scripts: './lib/**/*.js',
     specs: './test/specs/**/*Spec.js',
     bin: './bin',
-    docs: './docs'
+    jsdocs: './docs/jsdoc'
   }
 };

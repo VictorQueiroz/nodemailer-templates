@@ -37,10 +37,10 @@ gulp.task('test', function() {
 });
 
 gulp.task('jsdoc', function() {
-  deleteDir(paths.docs);
+  deleteDir(paths.jsdocs);
 
   return gulp.src([paths.scripts, 'README.md'])
-    .pipe(jsdoc(paths.docs));
+    .pipe(jsdoc(paths.jsdocs));
 });
 
 gulp.task('uglify', function() {
