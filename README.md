@@ -7,12 +7,13 @@ Project Installation
 ====================
 
 Prequisites:
+- nodejs
 - npm
 - Java for JSDoc
 
-Open a terminal in the root of this project.
-Run "npm install".
-Run "gulp".
+Open a terminal in the root of this project.<br/>
+Run "npm install".<br/>
+Run "gulp".<br/>
 
 Documentation
 =============
