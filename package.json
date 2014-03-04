@@ -1,6 +1,6 @@
 {
   "name": "nodemailer-templates",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "John Pittman <johnrichardpittman@gmail.com>",
   "description": "Template objects to render templated emails such as {{}} for nodemailer.",
   "repository": {
