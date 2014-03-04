@@ -1,1 +1,1 @@
-var Mustache=require("mustache");module.exports={MustacheMail:function(e,t){if("object"==typeof e&&"object"==typeof t)for(var r in e){var o=e[r];"string"==typeof o&&(e[r]=Mustache.render(o,t))}return e}};
+var Mustache=require("mustache");module.exports={MustacheMail:function(e,t){if("object"==typeof e&&"object"==typeof t){var r;for(r in e){var o=e[r];"string"==typeof o&&(e[r]=Mustache.render(o,t))}}return e}};
