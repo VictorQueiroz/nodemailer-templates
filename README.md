@@ -1,7 +1,7 @@
-nodemailer-mustache
+nodemailer-templates
 ================
 
-Mustache plugin object to render {{}} templated emails for nodemailer.
+Template objects to render templated emails such as {{}} for nodemailer.
 
 Project Installation
 ====================
@@ -25,7 +25,7 @@ Example:
 <br />
 var nodemailer = require("nodemailer");
 <br />
-var MustacheMail = require("nodemailer-mustache");
+var MustacheMail = require("nodemailer-templates").MustacheMail;
 <br />
 <br />
 // create reusable transport method (opens pool of SMTP connections)
@@ -61,7 +61,7 @@ var mailModel = {
 <br />
 // Create and send Mustache mail with defined transport object
 <br />
-smtpTransport.sendMail(new MustacheMail(mailOptions, mailModel), function(error, response){
+smtpTransport.sendMail(MustacheMail(mailOptions, mailModel), function(error, response){
     if(error){
         console.log(error);
     }else{

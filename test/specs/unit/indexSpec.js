@@ -1,10 +1,9 @@
 var expect = require('chai').expect;
 
-var MustacheMail = require('../../../lib/index');
+var MustacheMail = require('../../../lib/index').MustacheMail;
 
 describe('MustacheMail', function() {
   var myEmail = "johnrichardpittman@gmail.com";
-  var mustacheMail;
   var mailOptions;
   var mailModel = {
     email: myEmail
@@ -14,12 +13,12 @@ describe('MustacheMail', function() {
     mailOptions = {
       from: "{{email}}"
     };
-
-    mustacheMail = new MustacheMail(mailOptions, mailModel);
   });
 
   describe('#_render', function() {
     it('Replace all mustache tags with data from mailModel.', function() {
+      var mustacheMail = MustacheMail(mailOptions, mailModel);
+
       expect(mustacheMail.from).to.equal(myEmail);
     });
   });

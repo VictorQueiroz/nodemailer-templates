@@ -1,15 +1,15 @@
 {
-  "name": "nodemailer-mustache",
+  "name": "nodemailer-templates",
   "version": "1.0.0",
   "author": "John Pittman <johnrichardpittman@gmail.com>",
-  "description": "Mustache plugin object to render {{}} templated emails for nodemailer.",
+  "description": "Template objects to render templated emails such as {{}} for nodemailer.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JohnPittman/nodemailer-mustache.git"
+    "url": "https://github.com/JohnPittman/nodemailer-templates.git"
   },
   "keywords": [
-    "nodemailer-mustache",
-    "template",
+    "nodemailer-templates",
+    "mustache",
     "e-mail",
     "sending",
     "plugin",
